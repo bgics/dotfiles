@@ -1,31 +1,40 @@
 {
-  description = "Home Manager configuration of bhuvansh";
+  description = "Example nix-darwin system flake";
 
   inputs = {
-    # Specify the source of Home Manager and Nixpkgs.
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    home-manager = {
-      url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+
+    nix-darwin.url = "github:nix-darwin/nix-darwin/master";
+    nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
+
+    flake-utils.url = "github:numtide/flake-utils";
   };
 
   outputs =
-    { nixpkgs, home-manager, ... }:
-    let
-      system = "aarch64-darwin";
-      pkgs = nixpkgs.legacyPackages.${system};
-    in
     {
-      homeConfigurations."bhuvansh" = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
-
-        # Specify your home configuration modules here, for example,
-        # the path to your home.nix.
-        modules = [ ./home.nix ];
-
-        # Optionally use extraSpecialArgs
-        # to pass through arguments to home.nix
+      flake-utils,
+      nix-darwin,
+      nixpkgs,
+      ...
+    }:
+    flake-utils.lib.eachDefaultSystem (
+      system:
+      let
+        pkgs = nixpkgs.legacyPackages.${system};
+      in
+      {
+        devShells = {
+          default = pkgs.mkShell {
+            buildInputs = with pkgs; [
+              nil
+            ];
+          };
+        };
+      }
+    )
+    // {
+      darwinConfigurations."mac" = nix-darwin.lib.darwinSystem {
+        modules = [ ./configuration.nix ];
       };
     };
 }
