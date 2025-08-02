@@ -1,0 +1,26 @@
+# C/C++
+[[language]]
+name = "c"
+auto-format = true
+formatter = { command = "clang-format", args = [
+  "--style={BasedOnStyle: Google}",
+] }
+
+[[language]]
+name = "cpp"
+auto-format = true
+formatter = { command = "clang-format", args = [
+  "--style={BasedOnStyle: Google}",
+] }
+
+# TOML
+[[language]]
+name = "toml"
+auto-format = true
+roots = ["."]
+
+# NIX
+[[language]]
+name = "nix"
+auto-format = true
+formatter = { command = "nixpkgs-fmt" }

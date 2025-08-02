@@ -8,33 +8,49 @@
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
 
     flake-utils.url = "github:numtide/flake-utils";
+
+    home-manager.url = "github:nix-community/home-manager";
+    home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs =
-    {
-      flake-utils,
-      nix-darwin,
-      nixpkgs,
-      ...
+    { home-manager
+    , flake-utils
+    , nix-darwin
+    , nixpkgs
+    , ...
     }:
-    flake-utils.lib.eachDefaultSystem (
-      system:
-      let
-        pkgs = nixpkgs.legacyPackages.${system};
-      in
-      {
-        devShells = {
-          default = pkgs.mkShell {
-            buildInputs = with pkgs; [
-              nil
-            ];
+    flake-utils.lib.eachDefaultSystem
+      (
+        system:
+        let
+          pkgs = nixpkgs.legacyPackages.${system};
+        in
+        {
+          devShells = {
+            default = pkgs.mkShell {
+              buildInputs = with pkgs; [
+                nil
+                nixpkgs-fmt
+                taplo
+                clang
+                gcc
+              ];
+            };
           };
-        };
-      }
-    )
+        }
+      )
     // {
       darwinConfigurations."mac" = nix-darwin.lib.darwinSystem {
-        modules = [ ./configuration.nix ];
+        modules = [
+          ./hosts/mac/configuration.nix
+          home-manager.darwinModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.bhuvansh = ./hosts/mac/home.nix;
+          }
+        ];
       };
     };
 }

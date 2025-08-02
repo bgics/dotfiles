@@ -1,0 +1,19 @@
+theme = "gruvbox-material"
+
+[editor]
+end-of-line-diagnostics = "hint"
+line-number = "relative"
+cursorline = true
+mouse = false
+
+[editor.inline-diagnostics]
+cursor-line = "warning"
+
+[editor.soft-wrap]
+enable = true
+
+[keys.normal]
+y = [":clipboard-yank", "yank"]
+
+[keys.select]
+y = [":clipboard-yank", "yank"]

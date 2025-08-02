@@ -7,10 +7,6 @@
     pkgs.helix
   ];
 
-  environment.shells = [
-    pkgs.nushell
-  ];
-
   # Necessary for using flakes on this system.
   nix.settings.experimental-features = "nix-command flakes";
 
@@ -24,22 +20,16 @@
   # $ darwin-rebuild changelog
   system.stateVersion = 6;
 
-  security.pam.services.sudo_local.touchIdAuth = true;
-  homebrew.enable = true;
+  # security.pam.services.sudo_local.touchIdAuth = true;
 
   system.primaryUser = "bhuvansh";
 
+  homebrew.enable = true;
   homebrew.casks = [ "ghostty" ];
 
   # The platform the configuration will be used on.
   nixpkgs.hostPlatform = "aarch64-darwin";
 
-  users.knownUsers = [ "bhuvansh" ];
-
-  users.users."bhuvansh" = {
-    name = "bhuvansh";
-    home = "/Users/bhuvansh";
-    shell = pkgs.nushell;
-    uid = 502;
-  };
+  users.users.bhuvansh.home = "/Users/bhuvansh";
+  users.users.bhuvansh.shell = pkgs.zsh;
 }
