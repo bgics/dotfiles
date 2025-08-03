@@ -1,0 +1,1 @@
+/mnt/c/Users/bhuva/.config/wezterm/color_schemes.lua

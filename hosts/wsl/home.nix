@@ -1,8 +1,7 @@
-{ config, ... }:
+# { config, pkgs, ... }:
 {
   imports = [
     ../../modules/git.nix
-    ../../modules/ghostty.nix
     ../../modules/helix.nix
     ../../modules/direnv.nix
     ../../modules/starship.nix
@@ -10,11 +9,12 @@
     ../../modules/bash.nix
     ../../modules/zsh.nix
     ../../modules/nushell.nix
+    ../../modules/flake_enable.nix
   ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "bhuvansh";
-  home.homeDirectory = "/Users/bhuvansh";
+  home.homeDirectory = "/home/bhuvansh";
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
@@ -77,13 +77,12 @@
   #
   #  /etc/profiles/per-user/bhuvansh/etc/profile.d/hm-session-vars.sh
   #
-  # Let Home Manager install and manage itself.
-
   xdg.enable = true;
 
   home.sessionVariables = {
     EDITOR = "hx";
   };
 
+  # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 }

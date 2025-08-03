@@ -1,0 +1,1 @@
+/mnt/c/Users/bhuva/.wezterm.lua
