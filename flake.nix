@@ -19,7 +19,7 @@
     , nix-darwin
     , nixpkgs
     , ...
-    }:
+    }@inputs:
     flake-utils.lib.eachDefaultSystem
       (
         system:
@@ -58,6 +58,13 @@
         pkgs = nixpkgs.legacyPackages.${system};
       in
       {
+        nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
+          specialArgs = {inherit inputs;};
+          modules = [
+            ./hosts/nixos/configuration.nix
+            # inputs.home-manager.nixosModules.default
+          ];
+        };
         homeConfigurations."wsl" = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
 
