@@ -6,7 +6,8 @@
 
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [
+      # Include the results of the hardware scan.
       ./hardware-configuration.nix
       inputs.home-manager.nixosModules.default
     ];
@@ -105,11 +106,18 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-  #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-  #  wget
+    #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    #  wget
     vim
-	  helix
-	  ghostty
+    helix
+    ghostty
+    google-chrome
+    gnomeExtensions.tactile
+    gnomeExtensions.blur-my-shell
+    gnomeExtensions.rounded-window-corners-reborn
+    gnomeExtensions.dock-from-dash
+    gnomeExtensions.user-themes
+    gnome-tweaks
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
