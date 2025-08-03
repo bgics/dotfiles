@@ -30,6 +30,9 @@
   # The platform the configuration will be used on.
   nixpkgs.hostPlatform = "aarch64-darwin";
 
+  users.knownUsers = [ "bhuvansh" ];
+
   users.users.bhuvansh.home = "/Users/bhuvansh";
   users.users.bhuvansh.shell = pkgs.zsh;
+  users.users.bhuvansh.uid = 502;
 }
