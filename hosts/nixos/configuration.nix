@@ -8,9 +8,10 @@
     [
       # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      ../../modules/common/rstudio.nix
       ../../modules/common/fonts.nix
       ../../modules/common/flake_enable.nix
+      ../../modules/common/environment.nix
+      ../../modules/nixos/environment.nix
       inputs.home-manager.nixosModules.default
     ];
 
@@ -105,22 +106,17 @@
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-    #  wget
-    vim
-    helix
-    ghostty
-    google-chrome
-    wezterm
-    gnomeExtensions.tactile
-    gnomeExtensions.blur-my-shell
-    gnomeExtensions.rounded-window-corners-reborn
-    gnomeExtensions.dock-from-dash
-    gnomeExtensions.user-themes
-    gnome-tweaks
-
-  ];
+  # environment.systemPackages = with pkgs; [
+  #   ghostty
+  #   google-chrome
+  #   wezterm
+  #   gnomeExtensions.tactile
+  #   gnomeExtensions.blur-my-shell
+  #   gnomeExtensions.rounded-window-corners-reborn
+  #   gnomeExtensions.dock-from-dash
+  #   gnomeExtensions.user-themes
+  #   gnome-tweaks
+  # ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

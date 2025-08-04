@@ -2,15 +2,17 @@
 {
   imports = [
     ../../modules/common/fonts.nix
-    ../../modules/mac/homebrew.nix
     ../../modules/common/flake_enable.nix
+    ../../modules/common/environment.nix
+    ../../modules/mac/homebrew.nix
   ];
+
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
-  environment.systemPackages = [
-    pkgs.vim
-    pkgs.helix
-  ];
+  # environment.systemPackages = [
+  #   pkgs.vim
+  #   pkgs.helix
+  # ];
 
   # Necessary for using flakes on this system.
   # nix.settings.experimental-features = "nix-command flakes";
