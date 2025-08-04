@@ -1,4 +1,4 @@
 {
   homebrew.enable = true;
-  homebrew.casks = [ "ghostty" ];
+  homebrew.casks = [ "ghostty" "wezterm" ];
 }
