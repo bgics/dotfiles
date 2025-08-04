@@ -30,8 +30,6 @@
           devShells = {
             default = pkgs.mkShell {
               buildInputs = with pkgs; [
-                nil
-                nixpkgs-fmt
                 taplo
                 lua-language-server
               ];
@@ -59,7 +57,7 @@
       in
       {
         nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
-          specialArgs = {inherit inputs;};
+          specialArgs = { inherit inputs; };
           modules = [
             ./hosts/nixos/configuration.nix
             # inputs.home-manager.nixosModules.default

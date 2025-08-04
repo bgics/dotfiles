@@ -1,15 +1,16 @@
 # { config, pkgs, ... }:
 {
   imports = [
-    ../../modules/git.nix
-    ../../modules/helix.nix
-    ../../modules/direnv.nix
-    ../../modules/starship.nix
-    ../../modules/zellij.nix
-    ../../modules/bash.nix
-    ../../modules/zsh.nix
-    ../../modules/nushell.nix
-    ../../modules/flake_enable.nix
+    ../../modules/home-manager/git.nix
+    ../../modules/home-manager/helix.nix
+    ../../modules/home-manager/direnv.nix
+    ../../modules/home-manager/starship.nix
+    ../../modules/home-manager/zellij.nix
+    ../../modules/home-manager/bash.nix
+    ../../modules/home-manager/zsh.nix
+    ../../modules/home-manager/nushell.nix
+    ../../modules/home-manager/flake_enable.nix
+    ../../modules/home-manager/nix-dev.nix
   ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.

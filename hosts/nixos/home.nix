@@ -1,16 +1,17 @@
-{ config, pkgs, ... }:
-
+# { config, pkgs, ... }:
 {
   imports = [
-    ../../modules/git.nix
-    ../../modules/ghostty.nix
-    ../../modules/helix.nix
-    ../../modules/direnv.nix
-    ../../modules/starship.nix
-    ../../modules/zellij.nix
-    ../../modules/bash.nix
-    ../../modules/zsh.nix
-    ../../modules/nushell.nix
+    ../../modules/home-manager/git.nix
+    ../../modules/home-manager/ghostty.nix
+    ../../modules/home-manager/helix.nix
+    ../../modules/home-manager/direnv.nix
+    ../../modules/home-manager/starship.nix
+    ../../modules/home-manager/zellij.nix
+    ../../modules/home-manager/bash.nix
+    ../../modules/home-manager/zsh.nix
+    ../../modules/home-manager/nushell.nix
+    ../../modules/home-manager/wezterm.nix
+    ../../modules/home-manager/nix-dev.nix
   ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
@@ -28,6 +29,7 @@
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
+
   home.packages = [
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
@@ -49,18 +51,20 @@
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
-  home.file = {
-    # # Building this configuration will create a copy of 'dotfiles/screenrc' in
-    # # the Nix store. Activating the configuration will then make '~/.screenrc' a
-    # # symlink to the Nix store copy.
-    # ".screenrc".source = dotfiles/screenrc;
 
-    # # You can also set the file content immediately.
-    # ".gradle/gradle.properties".text = ''
-    #   org.gradle.console=verbose
-    #   org.gradle.daemon.idletimeout=3600000
-    # '';
-  };
+  home.file =
+    {
+      # # Building this configuration will create a copy of 'dotfiles/screenrc' in
+      # # the Nix store. Activating the configuration will then make '~/.screenrc' a
+      # # symlink to the Nix store copy.
+      # ".screenrc".source = dotfiles/screenrc;
+
+      # # You can also set the file content immediately.
+      # ".gradle/gradle.properties".text = ''
+      #   org.gradle.console=verbose
+      #   org.gradle.daemon.idletimeout=3600000
+      # '';
+    };
 
   # Home Manager can also manage your environment variables through
   # 'home.sessionVariables'. These will be explicitly sourced when using a

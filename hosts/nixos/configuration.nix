@@ -2,13 +2,15 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, inputs, ... }:
-
+{ pkgs, inputs, ... }: # config
 {
   imports =
     [
       # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ../../modules/common/rstudio.nix
+      ../../modules/common/fonts.nix
+      ../../modules/common/flake_enable.nix
       inputs.home-manager.nixosModules.default
     ];
 
@@ -18,8 +20,6 @@
 
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
@@ -112,12 +112,14 @@
     helix
     ghostty
     google-chrome
+    wezterm
     gnomeExtensions.tactile
     gnomeExtensions.blur-my-shell
     gnomeExtensions.rounded-window-corners-reborn
     gnomeExtensions.dock-from-dash
     gnomeExtensions.user-themes
     gnome-tweaks
+
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
