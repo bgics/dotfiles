@@ -1,4 +1,9 @@
 { pkgs, ... }:
+let
+  rstudio = pkgs.rstudioWrapper.override {
+    packages = with pkgs.rPackages; [ tidyverse here ];
+  };
+in
 {
   environment.systemPackages = with pkgs; [
     ghostty
@@ -13,7 +18,6 @@
 
     gnome-tweaks
 
-    rstudioWrapper.override
-    { packages = [ ]; } # with pkgs.rPackages; 
+    rstudio
   ];
 }
