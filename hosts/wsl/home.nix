@@ -9,7 +9,7 @@
     ../../modules/home-manager/bash.nix
     ../../modules/home-manager/zsh.nix
     ../../modules/home-manager/nushell.nix
-    ../../modules/home-manager/flake_enable.nix
+    ../../modules/common/flake_enable.nix
     ../../modules/home-manager/nix-dev.nix
   ];
   # Home Manager needs a bit of information about you and the paths it should
