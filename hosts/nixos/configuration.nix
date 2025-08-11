@@ -90,6 +90,8 @@
     shell = pkgs.zsh;
   };
 
+  nix.settings.trusted-users = [ "root" "bhuvansh" ];
+
   home-manager = {
     extraSpecialArgs = { inherit inputs; };
     users."bhuvansh" = import ./home.nix;
@@ -129,7 +131,7 @@
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
+  services.openssh.enable = true;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];

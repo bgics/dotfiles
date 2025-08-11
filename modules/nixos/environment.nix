@@ -19,5 +19,8 @@ in
     gnome-tweaks
 
     rstudio
+
+    spotify
+    evince
   ];
 }

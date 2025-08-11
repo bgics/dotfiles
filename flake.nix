@@ -11,6 +11,8 @@
 
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+
+    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
   };
 
   outputs =
@@ -18,6 +20,7 @@
     , flake-utils
     , nix-darwin
     , nixpkgs
+    , nixos-hardware
     , ...
     }@inputs:
     flake-utils.lib.eachDefaultSystem
@@ -60,6 +63,7 @@
           specialArgs = { inherit inputs; };
           modules = [
             ./hosts/nixos/configuration.nix
+            nixos-hardware.nixosModules.asus-zephyrus-ga503
             # inputs.home-manager.nixosModules.default
           ];
         };
