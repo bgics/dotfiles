@@ -24,3 +24,7 @@ roots = ["."]
 name = "nix"
 auto-format = true
 formatter = { command = "nixpkgs-fmt" }
+
+# RUST
+[language-server.rust-analyzer.config]
+check.command = "clippy"

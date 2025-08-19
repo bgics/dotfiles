@@ -39,4 +39,6 @@
   users.users.bhuvansh.home = "/Users/bhuvansh";
   users.users.bhuvansh.shell = pkgs.zsh;
   users.users.bhuvansh.uid = 502;
+
+  system.defaults.NSGlobalDomain.KeyRepeat = 2;
 }

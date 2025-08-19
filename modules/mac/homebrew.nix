@@ -1,4 +1,13 @@
 {
-  homebrew.enable = true;
-  homebrew.casks = [ "ghostty" "wezterm" ];
+  homebrew = {
+    enable = true;
+    onActivation = {
+      cleanup = "zap";
+    };
+    casks = [
+      "ghostty"
+      "wezterm"
+      "xquartz"
+    ];
+  };
 }
