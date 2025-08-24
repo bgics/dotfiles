@@ -33,4 +33,12 @@
   system.primaryUser = "bhuvansh";
 
   users.users.bhuvansh.home = "/Users/bhuvansh";
+
+  system.defaults = {
+    dock.autohide = true;
+    loginwindow.GuestEnabled = false;
+    NSGlobalDomain.AppleInterfaceStyle = "Dark";
+    NSGlobalDomain.KeyRepeat = 2;
+    finder.CreateDesktop = false;
+  };
 }
