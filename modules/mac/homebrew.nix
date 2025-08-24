@@ -9,7 +9,6 @@
 
     brews = [
       "mas"
-      "r"
     ];
 
     casks = [
@@ -18,7 +17,6 @@
       "xquartz"
       "spotify"
       "whatsapp"
-      "rstudio@daily"
     ];
 
     masApps = {
