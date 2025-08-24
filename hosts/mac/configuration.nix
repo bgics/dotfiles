@@ -33,6 +33,4 @@
   system.primaryUser = "bhuvansh";
 
   users.users.bhuvansh.home = "/Users/bhuvansh";
-
-  system.defaults.NSGlobalDomain.KeyRepeat = 2;
 }

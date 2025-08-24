@@ -8,6 +8,7 @@
       "ghostty"
       "wezterm"
       "xquartz"
+      "spotify"
     ];
   };
 }
