@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 {
   imports = [
     ../../modules/common/fonts.nix
@@ -41,4 +41,6 @@
     NSGlobalDomain.KeyRepeat = 2;
     finder.CreateDesktop = false;
   };
+
+  programs.ssh.extraConfig = "ObscureKeystrokeTiming=no";
 }
