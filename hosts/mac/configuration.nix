@@ -27,18 +27,8 @@
   # $ darwin-rebuild changelog
   system.stateVersion = 6;
 
-  # security.pam.services.sudo_local.touchIdAuth = true;
-
-  system.primaryUser = "bhuvansh";
-
   # The platform the configuration will be used on.
   nixpkgs.hostPlatform = "aarch64-darwin";
-
-  users.knownUsers = [ "bhuvansh" ];
-
-  users.users.bhuvansh.home = "/Users/bhuvansh";
-  users.users.bhuvansh.shell = pkgs.zsh;
-  users.users.bhuvansh.uid = 502;
 
   system.defaults.NSGlobalDomain.KeyRepeat = 2;
 }
