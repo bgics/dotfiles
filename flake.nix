@@ -13,6 +13,8 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+
+    nvf.url = "github:notashelf/nvf";
   };
 
   outputs =
@@ -21,6 +23,7 @@
     , nix-darwin
     , nixpkgs
     , nixos-hardware
+    , nvf
     , ...
     }@inputs:
     flake-utils.lib.eachDefaultSystem
@@ -49,6 +52,7 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.users.bhuvansh = ./hosts/mac/home.nix;
+            home-manager.extraSpecialArgs = { inherit nvf; };
           }
         ];
       };
@@ -64,7 +68,6 @@
           modules = [
             ./hosts/nixos/configuration.nix
             nixos-hardware.nixosModules.asus-zephyrus-ga503
-            # inputs.home-manager.nixosModules.default
           ];
         };
         homeConfigurations."wsl" = home-manager.lib.homeManagerConfiguration {

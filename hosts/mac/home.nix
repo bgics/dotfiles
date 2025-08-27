@@ -12,6 +12,7 @@
     ../../modules/home-manager/nushell.nix
     ../../modules/home-manager/wezterm.nix
     ../../modules/home-manager/nix-dev.nix
+    ../../modules/home-manager/neovim.nix
   ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
@@ -84,7 +85,7 @@
   xdg.enable = true;
 
   home.sessionVariables = {
-    EDITOR = "hx";
+    EDITOR = "nvim";
   };
 
   programs.home-manager.enable = true;
