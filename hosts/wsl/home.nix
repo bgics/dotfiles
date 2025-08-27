@@ -12,6 +12,7 @@
     ../../modules/common/flake_enable.nix
     ../../modules/home-manager/nix-dev.nix
     ../../modules/home-manager/neovim.nix
+    ../../modules/home-manager/default-editor.nix
   ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.

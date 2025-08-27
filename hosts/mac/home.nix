@@ -13,6 +13,7 @@
     ../../modules/home-manager/wezterm.nix
     ../../modules/home-manager/nix-dev.nix
     ../../modules/home-manager/neovim.nix
+    ../../modules/home-manager/default-editor.nix
   ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
@@ -83,10 +84,6 @@
   # Let Home Manager install and manage itself.
 
   xdg.enable = true;
-
-  home.sessionVariables = {
-    EDITOR = "nvim";
-  };
 
   programs.home-manager.enable = true;
 }
