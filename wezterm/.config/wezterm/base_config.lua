@@ -9,8 +9,7 @@ config.color_scheme = 'Gruvbox Material Dark'
 config.enable_tab_bar = false
 -- config.window_decorations = "RESIZE"
 
-config.font = wezterm.font("CodeNewRoman Nerd Font")
-config.font_size = 17
+config.font_size = 14
 
 config.window_padding = {
   left = 8,

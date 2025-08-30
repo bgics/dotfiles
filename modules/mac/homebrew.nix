@@ -17,6 +17,7 @@
       "xquartz"
       "spotify"
       "whatsapp"
+      "microsoft-teams"
     ];
 
     masApps = {
