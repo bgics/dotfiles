@@ -64,7 +64,7 @@
       in
       {
         nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
-          specialArgs = { inherit inputs; };
+          specialArgs = { inherit inputs nvf; };
           modules = [
             ./hosts/nixos/configuration.nix
             nixos-hardware.nixosModules.asus-zephyrus-ga503
