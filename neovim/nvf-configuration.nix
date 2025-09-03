@@ -43,6 +43,11 @@
       smartcase = true;
     };
 
+    extraPackages = with pkgs; [
+      ripgrep
+      texlab
+    ];
+
     startPlugins = [
       pkgs.vimPlugins.nvim-web-devicons
     ];
@@ -54,6 +59,7 @@
       "gitsigns.nvim" = import ./gitsigns-nvim.nix { inherit pkgs; };
       "nvim-autopairs" = import ./nvim-autopairs.nix { inherit pkgs; };
       "conform.nvim" = import ./conform.nix { inherit pkgs; };
+      "vimtex" = import ./vimtex.nix { inherit pkgs; };
     };
 
     utility.snacks-nvim = {
@@ -69,6 +75,14 @@
         input = { enabled = true; };
         picker = { enabled = true; };
         quickfile = { enabled = true; };
+      };
+    };
+
+    lsp.servers = {
+      texlab = {
+        enable = true;
+        cmd = [ "texlab" ];
+        filetypes = [ "tex" "bib" ];
       };
     };
 

@@ -18,6 +18,8 @@
       "spotify"
       "whatsapp"
       "microsoft-teams"
+      "skim"
+      "kicad"
     ];
 
     masApps = {
