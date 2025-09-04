@@ -1,9 +1,4 @@
 { pkgs, ... }:
-let
-  rstudio = pkgs.rstudioWrapper.override {
-    packages = with pkgs.rPackages; [ tidyverse here ];
-  };
-in
 {
   environment.systemPackages = with pkgs; [
     ghostty
@@ -18,9 +13,9 @@ in
 
     gnome-tweaks
 
-    rstudio
-
     spotify
     evince
+
+    tlp
   ];
 }
