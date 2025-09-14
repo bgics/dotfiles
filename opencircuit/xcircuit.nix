@@ -1,8 +1,4 @@
-{ pkgs, ... }:
-let
-  tcl = import ./tcl.nix { inherit pkgs; };
-  tk = import ./tk.nix { inherit pkgs tcl; };
-in
+{ pkgs, tcl, tk, ... }:
 pkgs.stdenv.mkDerivation {
   pname = "xcircuit";
   version = "3.8.58";
@@ -16,7 +12,7 @@ pkgs.stdenv.mkDerivation {
     xorg.libX11
     xorg.libXt
     cairo
-  ];
+  ] ++ [ tk tcl ];
 
   NIX_CFLAGS_COMPILE = "-Wno-error=format-security";
 

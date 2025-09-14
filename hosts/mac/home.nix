@@ -15,7 +15,9 @@
     ../../modules/home-manager/neovim.nix
     ../../modules/home-manager/default-editor.nix
     ../../modules/home-manager/texlive.nix
-    ../../modules/home-manager/xcircuit.nix
+    ../../modules/home-manager/opencircuit.nix
+    ../../modules/home-manager/ngspice.nix
+    ../../modules/home-manager/pandoc.nix
   ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
