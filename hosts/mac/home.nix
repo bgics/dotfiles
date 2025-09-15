@@ -15,7 +15,7 @@
     ../../modules/home-manager/neovim.nix
     ../../modules/home-manager/default-editor.nix
     ../../modules/home-manager/texlive.nix
-    ../../modules/home-manager/opencircuit.nix
+    ../../modules/home-manager/vlsi.nix
     ../../modules/home-manager/ngspice.nix
     ../../modules/home-manager/pandoc.nix
   ];
