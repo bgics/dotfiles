@@ -9,6 +9,7 @@
 
     brews = [
       "mas"
+      "xterm"
     ];
 
     casks = [
