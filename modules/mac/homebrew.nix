@@ -18,9 +18,9 @@
       "xquartz"
       "spotify"
       "whatsapp"
+      "iina"
       "microsoft-teams"
       "skim"
-      "kicad"
     ];
 
     masApps = {
