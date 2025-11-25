@@ -18,13 +18,14 @@
       "xquartz"
       "spotify"
       "whatsapp"
+      "brave-browser"
       "iina"
       "microsoft-teams"
       "skim"
     ];
 
     masApps = {
-      "Goodnotes 6: AI Notes & Docs" = 1444383602;
+      "Goodnotes: AI Notes, Docs, PDF" = 1444383602;
     };
   };
 }
