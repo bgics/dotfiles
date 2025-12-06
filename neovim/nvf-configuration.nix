@@ -1,5 +1,4 @@
 { pkgs
-, lib
 , ...
 }: {
   vim = {
@@ -77,32 +76,19 @@
       };
     };
 
-    lsp.enable = true;
-    lsp.servers = {
-      texlab = {
-        enable = true;
-        cmd = [ "texlab" ];
-        filetypes = [ "tex" "bib" ];
-      };
-      svlangserver = {
-        enable = true;
-        filetypes = [ "verilog" ];
-        root_markers = [ ".git" ];
-
-        on_attach = lib.generators.mkLuaInline ''
-          function(client, bufnr)
-            client.config.settings.systemverilog = {
-              includeIndexing     = {"**/*.{v,vh}"},
-              excludeIndexing     = {},
-              defines             = {},
-              launchConfiguration = "verilator -sv -Wall --lint-only",
-              formatCommand       = "verible-verilog-format"
-            }
-      
-            client.notify("workspace/didChangeConfiguration")
-            return true
-          end
-        '';
+    lsp = {
+      enable = true;
+      servers = {
+        texlab = {
+          enable = true;
+          cmd = [ "texlab" ];
+          filetypes = [ "tex" "bib" ];
+        };
+        verible-verilog-ls = {
+          enable = true;
+          cmd = [ "verible-verilog-ls" ];
+          filetypes = [ "verilog" "systemverilog" ];
+        };
       };
     };
 
