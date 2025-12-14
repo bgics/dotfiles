@@ -1,6 +1,4 @@
-{ pkgs
-, ...
-}: {
+{ pkgs, ... }: {
   vim = {
     treesitter.textobjects.enable = false;
 
@@ -24,6 +22,41 @@
       config = {
         virtual_text = true;
         virtual_line = true;
+      };
+      nvim-lint = {
+        enable = true;
+        linters_by_ft = {
+          go = [ "golangcilint" ];
+        };
+      };
+    };
+
+    formatter.conform-nvim = {
+      enable = true;
+      setupOpts = {
+        format_on_save = {
+          lsp_format = "fallback";
+          timeout_ms = 500;
+        };
+
+        notify_on_error = false;
+        notify_no_formatters = false;
+
+        formatters_by_ft = {
+          lua = [ "stylua" ];
+          go = [ "gofmt" ];
+          python = [ "ruff_format" ];
+          nix = [ "nixpkgs_fmt" ];
+          c = [ "clang-format" ];
+          cpp = [ "clang-format" ];
+          rust = [ "rustfmt" ];
+        };
+
+        formatters = {
+          "clang-format" = {
+            args = [ "--style" "google" ];
+          };
+        };
       };
     };
 
@@ -56,7 +89,7 @@
       "harpoon2" = import ./harpoon.nix { inherit pkgs; };
       "gitsigns.nvim" = import ./gitsigns-nvim.nix { inherit pkgs; };
       "nvim-autopairs" = import ./nvim-autopairs.nix { inherit pkgs; };
-      "conform.nvim" = import ./conform.nix { inherit pkgs; };
+      # "conform.nvim" = import ./conform.nix {inherit pkgs;};
       "vimtex" = import ./vimtex.nix { inherit pkgs; };
     };
 
@@ -84,10 +117,11 @@
           cmd = [ "texlab" ];
           filetypes = [ "tex" "bib" ];
         };
-        verible-verilog-ls = {
+        veridian = {
           enable = true;
-          cmd = [ "verible-verilog-ls" ];
+          cmd = [ "veridian" ];
           filetypes = [ "verilog" "systemverilog" ];
+          root_markers = [ ".git" "veridian.yml" ];
         };
       };
     };
@@ -107,6 +141,7 @@
         },
       '';
       go.enable = true;
+      typst.enable = true;
     };
   };
 }

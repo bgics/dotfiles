@@ -30,10 +30,11 @@ formatter = { command = "nixpkgs-fmt" }
 check.command = "clippy"
 
 # VERILOG
-[language-server.verible-verilog-ls]
-command = "verible-verilog-ls"
+[language-server.veridian]
+command = "veridian"
 
 [[language]]
 name = "verilog"
 auto-format = true
-language-servers = ["verible-verilog-ls"]
+language-servers = ["veridian"]
+roots = ["veridian.yml"]

@@ -7,9 +7,11 @@
       upgrade = true;
     };
 
+    taps = [ "chipsalliance/verible" ];
+
     brews = [
       "mas"
-      "xterm"
+      "verible"
     ];
 
     casks = [
@@ -22,6 +24,7 @@
       "iina"
       "microsoft-teams"
       "skim"
+      "kicad"
     ];
 
     masApps = {

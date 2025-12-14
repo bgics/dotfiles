@@ -18,6 +18,7 @@
     ../../modules/home-manager/vlsi.nix
     ../../modules/home-manager/ngspice.nix
     ../../modules/home-manager/pandoc.nix
+    ../../modules/home-manager/devenv.nix
   ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
