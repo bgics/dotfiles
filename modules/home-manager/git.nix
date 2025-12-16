@@ -1,7 +1,9 @@
 {
   programs.git = {
     enable = true;
-    userName = "Bhuvansh Goyal";
-    userEmail = "bhuvansh.iitb@gmail.com";
+    settings = {
+      user.name = "Bhuvansh Goyal";
+      user.email = "bhuvansh.iitb@gmail.com";
+    };
   };
 }

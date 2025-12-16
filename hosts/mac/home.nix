@@ -19,6 +19,9 @@
     ../../modules/home-manager/ngspice.nix
     ../../modules/home-manager/pandoc.nix
     ../../modules/home-manager/devenv.nix
+    ../../modules/home-manager/ripgrep.nix
+    ../../modules/home-manager/texlab.nix
+    ../../modules/home-manager/fd.nix
   ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.

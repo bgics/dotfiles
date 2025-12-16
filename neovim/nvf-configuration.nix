@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{pkgs, ...}: {
   vim = {
     treesitter.textobjects.enable = false;
 
@@ -26,7 +26,8 @@
       nvim-lint = {
         enable = true;
         linters_by_ft = {
-          go = [ "golangcilint" ];
+          go = ["golangcilint"];
+          python = ["ruff"];
         };
       };
     };
@@ -43,18 +44,18 @@
         notify_no_formatters = false;
 
         formatters_by_ft = {
-          lua = [ "stylua" ];
-          go = [ "gofmt" ];
-          python = [ "ruff_format" ];
-          nix = [ "nixpkgs_fmt" ];
-          c = [ "clang-format" ];
-          cpp = [ "clang-format" ];
-          rust = [ "rustfmt" ];
+          lua = ["stylua"];
+          go = ["gofmt"];
+          python = ["ruff_fix" "ruff_format"];
+          nix = ["nixpkgs_fmt"];
+          c = ["clang-format"];
+          cpp = ["clang-format"];
+          rust = ["rustfmt"];
         };
 
         formatters = {
           "clang-format" = {
-            args = [ "--style" "google" ];
+            args = ["--style" "google"];
           };
         };
       };
@@ -74,54 +75,49 @@
       smartcase = true;
     };
 
-    extraPackages = with pkgs; [
-      ripgrep
-      texlab
-    ];
-
     startPlugins = [
       pkgs.vimPlugins.nvim-web-devicons
     ];
 
     lazy.plugins = {
-      "gruvbox-material" = import ./gruvbox-material.nix { inherit pkgs; };
-      "nvim-ufo" = import ./nvim-ufo.nix { inherit pkgs; };
-      "harpoon2" = import ./harpoon.nix { inherit pkgs; };
-      "gitsigns.nvim" = import ./gitsigns-nvim.nix { inherit pkgs; };
-      "nvim-autopairs" = import ./nvim-autopairs.nix { inherit pkgs; };
-      # "conform.nvim" = import ./conform.nix {inherit pkgs;};
-      "vimtex" = import ./vimtex.nix { inherit pkgs; };
+      "gruvbox-material" = import ./gruvbox-material.nix {inherit pkgs;};
+      "nvim-ufo" = import ./nvim-ufo.nix {inherit pkgs;};
+      "harpoon2" = import ./harpoon.nix {inherit pkgs;};
+      "gitsigns.nvim" = import ./gitsigns-nvim.nix {inherit pkgs;};
+      "nvim-autopairs" = import ./nvim-autopairs.nix {inherit pkgs;};
+      "vimtex" = import ./vimtex.nix {inherit pkgs;};
     };
 
     utility.snacks-nvim = {
       enable = true;
       setupOpts = {
-        bigfile = { enabled = true; };
+        bigfile = {enabled = true;};
         indent = {
           enabled = true;
           animate = {
             enabled = false;
           };
         };
-        input = { enabled = true; };
-        picker = { enabled = true; };
-        quickfile = { enabled = true; };
+        input = {enabled = true;};
+        picker = {enabled = true;};
+        quickfile = {enabled = true;};
       };
     };
 
     lsp = {
+      lspconfig.enable = true;
       enable = true;
       servers = {
         texlab = {
           enable = true;
-          cmd = [ "texlab" ];
-          filetypes = [ "tex" "bib" ];
+          cmd = ["texlab"];
+          filetypes = ["tex" "bib"];
         };
         veridian = {
           enable = true;
-          cmd = [ "veridian" ];
-          filetypes = [ "verilog" "systemverilog" ];
-          root_markers = [ ".git" "veridian.yml" ];
+          cmd = ["veridian"];
+          filetypes = ["verilog" "systemverilog"];
+          root_markers = ["veridian.yml"];
         };
       };
     };
@@ -142,6 +138,7 @@
       '';
       go.enable = true;
       typst.enable = true;
+      python.enable = true;
     };
   };
 }
