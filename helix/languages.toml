@@ -28,6 +28,7 @@ formatter = { command = "nixpkgs-fmt" }
 # RUST
 [language-server.rust-analyzer.config]
 check.command = "clippy"
+files.excludeDirs = [".direnv", "target", "build"]
 
 # VERILOG
 [language-server.veridian]
