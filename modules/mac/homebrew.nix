@@ -7,7 +7,7 @@
       upgrade = true;
     };
 
-    taps = [ "chipsalliance/verible" ];
+    taps = ["chipsalliance/verible"];
 
     brews = [
       "mas"
@@ -22,6 +22,7 @@
       "whatsapp"
       "brave-browser"
       "iina"
+      "autodesk-fusion"
       "microsoft-teams"
       "skim"
       "kicad"
