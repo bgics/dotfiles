@@ -12,7 +12,6 @@
     ../../modules/home-manager/nushell.nix
     ../../modules/home-manager/wezterm.nix
     ../../modules/home-manager/nix-dev.nix
-    ../../modules/home-manager/neovim.nix
     ../../modules/home-manager/default-editor.nix
     ../../modules/home-manager/texlive.nix
     ../../modules/home-manager/vlsi.nix
