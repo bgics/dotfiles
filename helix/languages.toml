@@ -39,3 +39,8 @@ name = "verilog"
 auto-format = true
 language-servers = ["veridian"]
 roots = ["veridian.yml"]
+
+# LATEX
+[[language]]
+name = "latex"
+auto-format = true
