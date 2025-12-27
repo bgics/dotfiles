@@ -7,7 +7,7 @@
       upgrade = true;
     };
 
-    taps = ["chipsalliance/verible"];
+    taps = [ "chipsalliance/verible" ];
 
     brews = [
       "mas"
