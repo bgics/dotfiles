@@ -1,12 +1,10 @@
+let
+  envFile = builtins.readFile ../../env.nu;
+in
 {
   programs.nushell = {
     enable = true;
-    extraConfig = "
-        alias z = zoxide
-      ";
-    extraEnv = "
-        $env.config.show_banner = false
-      ";
+    extraEnv = envFile;
   };
   home.shell.enableNushellIntegration = true;
 }

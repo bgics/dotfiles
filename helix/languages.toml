@@ -30,6 +30,14 @@ formatter = { command = "nixpkgs-fmt" }
 check.command = "clippy"
 files.excludeDirs = [".direnv", "target", "build"]
 
+# PYTHON
+[[language]]
+name = "python"
+auto-format = true
+
+[language-server.ty.config]
+experimental.rename = true
+
 # VERILOG
 [language-server.veridian]
 command = "veridian"
