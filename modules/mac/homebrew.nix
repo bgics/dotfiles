@@ -26,6 +26,7 @@
       "microsoft-teams"
       "skim"
       "kicad"
+      "arc"
     ];
 
     masApps = {
