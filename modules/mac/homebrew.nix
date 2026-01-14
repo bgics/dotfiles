@@ -27,6 +27,10 @@
       "skim"
       "kicad"
       "arc"
+      "betterdisplay"
+      "raycast"
+      "utm"
+      "ghdl"
     ];
 
     masApps = {
