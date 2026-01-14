@@ -30,7 +30,6 @@
       "betterdisplay"
       "raycast"
       "utm"
-      "ghdl"
     ];
 
     masApps = {

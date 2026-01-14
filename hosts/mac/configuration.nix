@@ -38,8 +38,10 @@
   system.defaults = {
     dock.autohide = true;
     loginwindow.GuestEnabled = false;
-    NSGlobalDomain.AppleInterfaceStyle = "Dark";
-    NSGlobalDomain.KeyRepeat = 2;
+    NSGlobalDomain = {
+      AppleInterfaceStyle = "Dark";
+      KeyRepeat = 2;
+    };
     finder.CreateDesktop = false;
   };
 
