@@ -1,28 +1,29 @@
 # { config, pkgs, ... }:
 {
   imports = [
-    ../../modules/home-manager/git.nix
-    ../../modules/home-manager/ghostty.nix
-    ../../modules/home-manager/helix.nix
-    ../../modules/home-manager/direnv.nix
-    ../../modules/home-manager/starship.nix
-    ../../modules/home-manager/zellij.nix
-    ../../modules/home-manager/bash.nix
-    ../../modules/home-manager/zsh.nix
-    ../../modules/home-manager/nushell.nix
-    ../../modules/home-manager/wezterm.nix
-    ../../modules/home-manager/nix-dev.nix
-    ../../modules/home-manager/zip.nix
-    ../../modules/home-manager/neovim.nix
-    ../../modules/home-manager/default-editor.nix
-    ../../modules/home-manager/texlive.nix
-    ../../modules/home-manager/vlsi.nix
-    ../../modules/home-manager/ngspice.nix
-    ../../modules/home-manager/pandoc.nix
-    ../../modules/home-manager/devenv.nix
-    ../../modules/home-manager/ripgrep.nix
-    ../../modules/home-manager/texlab.nix
-    ../../modules/home-manager/fd.nix
+    ../../../modules/home-manager/git.nix
+    ../../../modules/home-manager/ghostty.nix
+    ../../../modules/home-manager/helix.nix
+    ../../../modules/home-manager/direnv.nix
+    ../../../modules/home-manager/starship.nix
+    ../../../modules/home-manager/zellij.nix
+    ../../../modules/home-manager/bash.nix
+    ../../../modules/home-manager/zsh.nix
+    ../../../modules/home-manager/nushell.nix
+    ../../../modules/home-manager/wezterm.nix
+    ../../../modules/home-manager/nix-dev.nix
+    ../../../modules/home-manager/default-editor.nix
+    ../../../modules/home-manager/texlive.nix
+    ../../../modules/home-manager/vlsi.nix
+    ../../../modules/home-manager/ngspice.nix
+    ../../../modules/home-manager/pandoc.nix
+    ../../../modules/home-manager/devenv.nix
+    ../../../modules/home-manager/ripgrep.nix
+    ../../../modules/home-manager/texlab.nix
+    ../../../modules/home-manager/fd.nix
+    ../../../modules/home-manager/carapace.nix
+    ../../../modules/home-manager/zoxide.nix
+    ../../../modules/home-manager/fzf.nix
   ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.

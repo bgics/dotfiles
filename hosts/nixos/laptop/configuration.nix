@@ -8,10 +8,10 @@
     [
       # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      ../../modules/common/fonts.nix
-      ../../modules/common/flake_enable.nix
-      ../../modules/common/environment.nix
-      ../../modules/nixos/environment.nix
+      ../../../modules/common/fonts.nix
+      ../../../modules/common/flake_enable.nix
+      ../../../modules/common/environment.nix
+      ../../../modules/nixos/laptop/environment.nix
       inputs.home-manager.nixosModules.default
     ];
 
