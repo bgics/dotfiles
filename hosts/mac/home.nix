@@ -24,6 +24,8 @@
     ../../modules/home-manager/carapace.nix
     ../../modules/home-manager/zoxide.nix
     ../../modules/home-manager/fzf.nix
+    ../../modules/home-manager/podman.nix
+    ../../modules/home-manager/ssh-agent.nix
   ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.

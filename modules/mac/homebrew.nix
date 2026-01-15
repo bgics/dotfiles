@@ -30,10 +30,9 @@
       "betterdisplay"
       "raycast"
       "utm"
+      "google-drive"
     ];
 
-    masApps = {
-      "Goodnotes: AI Notes, Docs, PDF" = 1444383602;
-    };
+    masApps = { };
   };
 }
