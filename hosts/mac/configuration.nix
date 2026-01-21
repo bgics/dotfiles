@@ -36,10 +36,45 @@
   users.users.bhuvansh.home = "/Users/bhuvansh";
 
   system.defaults = {
-    dock.autohide = true;
+    dock = {
+      autohide = true;
+      show-recents = false;
+      mru-spaces = false;
+      tilesize = 64;
+      persistent-apps = [
+        {
+          app = "/System/Applications/Mail.app";
+        }
+        {
+          app = "/System/Applications/Calendar.app";
+        }
+        {
+          app = "/Applications/Spotify.app";
+        }
+        {
+          app = "/Applications/Arc.app";
+        }
+        {
+          app = "/Applications/Goodnotes.app";
+        }
+        {
+          app = "/Applications/Ghostty.app";
+        }
+        {
+          app = "/System/Applications/App Store.app";
+        }
+        {
+          app = "/Applications/WhatsApp.app";
+        }
+        {
+          app = "/System/Applications/System Settings.app";
+        }
+      ];
+    };
     loginwindow.GuestEnabled = false;
     NSGlobalDomain = {
       AppleInterfaceStyle = "Dark";
+      AppleIconAppearanceTheme = "RegularDark";
       KeyRepeat = 2;
     };
     finder.CreateDesktop = false;

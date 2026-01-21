@@ -26,6 +26,7 @@
       "betterdisplay"
       "raycast"
       "utm"
+      "logi-options+"
     ];
 
     masApps = {
