@@ -43,6 +43,9 @@
       tilesize = 64;
       persistent-apps = [
         {
+          app = "/System/Applications/Reminders.app";
+        }
+        {
           app = "/System/Applications/Mail.app";
         }
         {
