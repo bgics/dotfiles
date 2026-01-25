@@ -84,4 +84,7 @@
   };
 
   programs.ssh.extraConfig = "ObscureKeystrokeTiming=no";
+  environment.systemPath = [
+    "/opt/homebrew/bin"
+  ];
 }

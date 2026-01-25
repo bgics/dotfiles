@@ -27,6 +27,7 @@
       "raycast"
       "utm"
       "logi-options+"
+      "autodesk-fusion"
     ];
 
     masApps = {
