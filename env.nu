@@ -1,3 +1,5 @@
+$env.config.shell_integration.osc133 = false
+
 $env.config.show_banner = false
 $env.config.edit_mode = 'vi'
 
