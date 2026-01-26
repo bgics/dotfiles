@@ -7,11 +7,8 @@
       upgrade = true;
     };
 
-    taps = [ "chipsalliance/verible" ];
-
     brews = [
       "mas"
-      "verible"
     ];
 
     casks = [
@@ -27,7 +24,6 @@
       "raycast"
       "utm"
       "logi-options+"
-      "autodesk-fusion"
     ];
 
     masApps = {
