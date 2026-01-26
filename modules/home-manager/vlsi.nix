@@ -10,14 +10,14 @@ let
 in
 {
   home.packages = [
-    open_pdks
+    # open_pdks
     xcircuit
-    xschem
-    netgen
-    magic
+    # xschem
+    # netgen
+    # magic
   ];
 
-  home.sessionVariables = {
-    PDK_ROOT = "${open_pdks}/share/pdk";
-  };
+  # home.sessionVariables = {
+  #   PDK_ROOT = "${open_pdks}/share/pdk";
+  # };
 }
