@@ -2,7 +2,8 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ pkgs, inputs, nvf, ... }: # config
+{ config, pkgs, inputs, nvf, ... }:
+
 {
   imports =
     [
@@ -48,35 +49,12 @@
   };
 
   # Enable the X11 windowing system.
+  # You can disable this if you're only using the Wayland session.
   services.xserver.enable = true;
 
-  # Enable the GNOME Desktop Environment.
-  # services.displayManager.gdm.enable = true;
-  # services.desktopManager.gnome.enable = true;
-
-  services = {
-    desktopManager.plasma6.enable = true;
-    displayManager.sddm.enable = true;
-    displayManager.sddm.wayland.enable = true;
-  };
-
-  environment.systemPackages = with pkgs;
-    [
-      kdePackages.discover # Optional: Install if you use Flatpak or fwupd firmware update sevice
-      kdePackages.kcalc # Calculator
-      kdePackages.kcharselect # Tool to select and copy special characters from all installed fonts
-      kdePackages.kcolorchooser # A small utility to select a color
-      kdePackages.kolourpaint # Easy-to-use paint program
-      kdePackages.ksystemlog # KDE SystemLog Application
-      kdePackages.sddm-kcm # Configuration module for SDDM
-      kdiff3 # Compares and merges 2 or 3 files or directories
-      kdePackages.isoimagewriter # Optional: Program to write hybrid ISO files onto USB disks
-      kdePackages.partitionmanager # Optional Manage the disk devices, partitions and file systems on your computer
-      hardinfo2 # System information and benchmarks for Linux systems
-      haruna # Open source video player built with Qt/QML and libmpv
-      wayland-utils # Wayland utilities
-      wl-clipboard # Command-line copy/paste utilities for Wayland
-    ];
+  # Enable the KDE Plasma Desktop Environment.
+  services.displayManager.sddm.enable = true;
+  services.desktopManager.plasma6.enable = true;
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -110,16 +88,19 @@
   users.users.bhuvansh = {
     isNormalUser = true;
     description = "Bhuvansh Goyal";
-    extraGroups = [ "networkmanager" "wheel" "docker" ];
+    extraGroups = [ "networkmanager" "wheel" ];
+    packages = with pkgs; [
+      kdePackages.kate
+      #  thunderbird
+    ];
     shell = pkgs.zsh;
   };
-
-  virtualisation.docker.enable = true;
 
   nix.settings.trusted-users = [ "root" "bhuvansh" ];
 
   home-manager = {
     extraSpecialArgs = { inherit inputs nvf; };
+    backupFileExtension = "backup";
     users."bhuvansh" = import ./home.nix;
   };
 
@@ -129,22 +110,14 @@
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
-
   hardware.bluetooth.enable = true;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  # environment.systemPackages = with pkgs; [
-  #   ghostty
-  #   google-chrome
-  #   wezterm
-  #   gnomeExtensions.tactile
-  #   gnomeExtensions.blur-my-shell
-  #   gnomeExtensions.rounded-window-corners-reborn
-  #   gnomeExtensions.dock-from-dash
-  #   gnomeExtensions.user-themes
-  #   gnome-tweaks
-  # ];
+  environment.systemPackages = with pkgs; [
+    #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    #  wget
+  ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -157,8 +130,7 @@
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
-  services.openssh.enable = true;
-
+  # services.openssh.enable = true;
   services.udev.packages = [
     (pkgs.writeTextFile {
       name = "xilinx-dilligent-usb-udev";
@@ -202,5 +174,6 @@
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "25.05"; # Did you read the comment?
+  system.stateVersion = "25.11"; # Did you read the comment?
+
 }

@@ -10,7 +10,6 @@
     ../../modules/home-manager/bash.nix
     ../../modules/home-manager/zsh.nix
     ../../modules/home-manager/nushell.nix
-    ../../modules/home-manager/wezterm.nix
     ../../modules/home-manager/nix-dev.nix
     ../../modules/home-manager/default-editor.nix
     ../../modules/home-manager/texlive.nix
