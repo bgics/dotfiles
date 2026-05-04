@@ -12,6 +12,7 @@
     ];
 
     casks = [
+      "brave-browser"
       "ghostty"
       "xquartz"
       "spotify"
