@@ -25,7 +25,6 @@
       "raycast"
       "utm"
       "logi-options+"
-      "openemu"
       "steam"
     ];
 
