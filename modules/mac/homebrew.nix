@@ -26,6 +26,7 @@
       "utm"
       "logi-options+"
       "steam"
+      "balenaetcher"
     ];
 
     masApps = {
