@@ -23,6 +23,7 @@
     ../../modules/home-manager/zoxide.nix
     ../../modules/home-manager/fzf.nix
     ../../modules/home-manager/ffmpeg.nix
+    ../../modules/home-manager/tree.nix
   ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
