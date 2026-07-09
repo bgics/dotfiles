@@ -9,6 +9,7 @@
 
     brews = [
       "mas"
+      "surfer"
     ];
 
     casks = [
@@ -27,7 +28,6 @@
       "logi-options+"
       "steam"
       "balenaetcher"
-      "codex"
     ];
 
     masApps = {
