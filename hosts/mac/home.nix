@@ -13,8 +13,6 @@
     ../../modules/home-manager/nix-dev.nix
     ../../modules/home-manager/default-editor.nix
     ../../modules/home-manager/texlive.nix
-    ../../modules/home-manager/vlsi.nix
-    ../../modules/home-manager/pandoc.nix
     ../../modules/home-manager/devenv.nix
     ../../modules/home-manager/ripgrep.nix
     ../../modules/home-manager/texlab.nix
@@ -24,6 +22,7 @@
     ../../modules/home-manager/fzf.nix
     ../../modules/home-manager/ffmpeg.nix
     ../../modules/home-manager/tree.nix
+    ../../modules/home-manager/herdr.nix
   ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
