@@ -3,6 +3,8 @@ $env.config.shell_integration.osc133 = false
 $env.config.show_banner = false
 $env.config.edit_mode = 'vi'
 
+# $env.PATH = ($env.PATH | prepend $"($env.HOME)/.local/bin")
+
 def zj [] {
   let sessions = (zellij ls -s -n)
   let num_sessions = (zellij ls | lines | length)

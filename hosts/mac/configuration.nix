@@ -55,9 +55,6 @@
           app = "/Applications/Spotify.app";
         }
         {
-          app = "/Applications/Arc.app";
-        }
-        {
           app = "/Applications/Goodnotes.app";
         }
         {

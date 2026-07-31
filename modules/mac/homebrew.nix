@@ -21,13 +21,14 @@
       "iina"
       "microsoft-teams"
       "skim"
-      "arc"
       "betterdisplay"
       "raycast"
       "utm"
       "logi-options+"
       "steam"
       "balenaetcher"
+      "ollama-app"
+      "codex"
     ];
 
     masApps = {

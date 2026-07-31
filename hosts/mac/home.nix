@@ -23,11 +23,17 @@
     ../../modules/home-manager/ffmpeg.nix
     ../../modules/home-manager/tree.nix
     ../../modules/home-manager/herdr.nix
+    ../../modules/home-manager/glow.nix
+    ../../modules/home-manager/bat.nix
   ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "bhuvansh";
   home.homeDirectory = "/Users/bhuvansh";
+
+  home.sessionPath = [
+    "$HOME/.local/bin"
+  ];
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
