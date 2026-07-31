@@ -10,6 +10,7 @@
     brews = [
       "mas"
       "surfer"
+      "hermes-agent"
     ];
 
     casks = [
