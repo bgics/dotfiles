@@ -10,7 +10,8 @@
     brews = [
       "mas"
       "surfer"
-      "hermes-agent"
+      "hf"
+      "llama.cpp"
     ];
 
     casks = [
@@ -28,8 +29,6 @@
       "logi-options+"
       "steam"
       "balenaetcher"
-      "ollama-app"
-      "codex"
     ];
 
     masApps = {
