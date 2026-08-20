@@ -29,6 +29,8 @@
       "logi-options+"
       "steam"
       "balenaetcher"
+      "codex"
+      "claude-code"
     ];
 
     masApps = {

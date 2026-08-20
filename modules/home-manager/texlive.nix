@@ -1,8 +1,6 @@
+{ pkgs, ... }:
 {
-  programs.texlive = {
-    enable = true;
-    extraPackages = tpkgs: {
-      inherit (tpkgs) scheme-full;
-    };
-  };
+  home.packages = [
+    (pkgs.texliveSmall.withPackages (ps: with ps; [ scheme-full ]))
+  ];
 }

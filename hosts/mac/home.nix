@@ -25,6 +25,8 @@
     ../../modules/home-manager/herdr.nix
     ../../modules/home-manager/glow.nix
     ../../modules/home-manager/bat.nix
+    ../../modules/home-manager/curl.nix
+    ../../modules/home-manager/vlsi.nix
   ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
