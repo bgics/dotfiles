@@ -10,12 +10,11 @@
     brews = [
       "mas"
       "surfer"
-      "hf"
-      "llama.cpp"
     ];
 
     casks = [
       "brave-browser"
+      "google-chrome"
       "ghostty"
       "xquartz"
       "spotify"
@@ -28,13 +27,12 @@
       "utm"
       "logi-options+"
       "steam"
-      "balenaetcher"
       "codex"
-      "claude-code"
     ];
 
     masApps = {
       "Goodnotes: AI Notes, Docs, PDF" = 1444383602;
+      "Numbers: Make Spreadsheets" = 361304891;
     };
   };
 }
